@@ -17,7 +17,7 @@ export default async function Home() {
           <SignOutButton />
         </div>
       ) : (
-        <SignInButton />
+        <SignInButton btnValue="Sign In" redirectPath="/" />
       )}
     </main>
   );
