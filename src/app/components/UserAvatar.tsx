@@ -1,14 +1,14 @@
 import Image from 'next/image'
-import { auth } from '../../../auth'
+import { Session } from 'next-auth'
 
-export default async function UserAvatar() {
-    const session = await auth()
+interface UserAvatarProps {
+    session: Session | null
+}
 
-    if(!session?.user) return null
-
+export default function UserAvatar({ session }: UserAvatarProps) {
     return (
         <div>
-            <Image src={session?.user.image || '/default_avatar.png'} width="500" height="500" alt={`${session.user.name} avatar image`}/>
+            <Image src={session?.user?.image || '/default_avatar.png'} width="50" height="50" alt={`${session?.user?.name} avatar image`}/>
         </div>
     )
 }
