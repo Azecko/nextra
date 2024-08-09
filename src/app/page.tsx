@@ -1,4 +1,5 @@
 import { auth } from "../../auth";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import LinkHref from "./components/LinkHref";
 import Image from "next/image";
@@ -10,7 +11,7 @@ export default async function Home() {
   return (
     <div>
       <Header session={session} />
-      <div className="pl-6 pt-8 md:pl-64 md:pt-16 min-h-screen bg-neutral-800 pb-48">
+      <div className="pl-6 pt-8 md:pl-64 md:pt-16 min-h-screen bg-neutral-800 pb-16">
         <h1 className="text-5xl font-medium mb-8">Nextra</h1>
         <p>Yeah, you made it 💪🏻 ! Welcome to Nextra !</p>
         <p>Nextra is a <LinkHref href="https://en.wikipedia.org/wiki/Boilerplate_code" text="boilerplate" target="_blank" />
@@ -94,6 +95,7 @@ export default async function Home() {
           target="_blank"/> !
         </i>
       </div>
+      <Footer />
     </div>
   );
 }
